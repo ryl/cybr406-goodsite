@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<body>
+<h1>Transfer</h1>
+
+<form th:action="@{/account/transfer}" method="post">
+    <div style="background-color: lightsalmon; padding: 15px;" th:if="${status}" th:text="${status}">
+        This is a status message.
+    </div>
+
+    <p>Your current account balance is: <span th:text="${balance}">$100.00</span></p>
+
+    <label for="account">Account</label>
+    <input id="account" type="text" name="account"/>
+    
+    <label for="amount">Amount</label>
+    <input id="amount" type="text" name="amount"/>
+    
+    <input type="submit" value="Transfer Money"/>
+</form>
+</body>
+</html>
